@@ -41,6 +41,22 @@ const generateImage = async (member) => {
     ctx.drawImage(avimg, av.x, av.y)
     ctx.restore()
 
+    //write in text
+    ctx.fillStyle = "white"
+    ctx.textAlign = "center"
+
+    //draw in Welcome
+    ctx.font = "50px Roboto"
+    ctx.fillText("Welcome", dim.width/2, dim.margin + 70)
+
+    // draw in the username
+    ctx.font = "60px Roboto"
+    ctx.fillText(username + discrim, dim.wdith/2, dim.height - dim.margin - 125)
+
+    //draw in to the server
+    ctx.font = "40px Roboto"
+    ctx.fillText("to the server", dim.widht / 2, dim.height - dim.margin - 50)
+
     const attachment = new Discord.MessageAttachemnt(canvas.toBuffer(), "welcome.png")
     return attachment
 }
